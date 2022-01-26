@@ -41,6 +41,9 @@ export default {
 .hello{
   text-align: center;
 }
+button{
+  margin: 20px;
+}
 h3 {
   margin: 40px 0 0;
 }
