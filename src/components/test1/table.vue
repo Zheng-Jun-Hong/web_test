@@ -1,25 +1,18 @@
 <template>
     <div class="frame">
         <div class="desktop">
-            <table class="shadow p-3 mb-5 bg-body rounded, table">
-                <thead>
-                    <tr>
-                        <th scope="col" v-for="item in colConfigs" v-bind:key="item">
-                            {{item.label}}
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="item in tableData" v-bind:key="item">
-                        <td>{{item.PV}}</td>
-                        <td>{{item.equip}}</td>
-                        <td>{{item.group}}</td>
-                        <td @dblclick="$emit('dbclick',item.event)">{{item.event}}</td>
-                        <td>{{item.time}}</td>
-                        <td>{{item.returntime}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div>
+                <el-table :data="tableData"
+                    :header-cell-style="{background:'yellow', textAlign:'center'}" 
+                    :cell-style="{textAlign:'center'}"
+                    @cell-dblclick="dblclickHandler"
+                >
+                    <el-table-column v-for="item in colConfigs" 
+                    v-bind:key="item" 
+                    :prop="item.prop" 
+                    :label="item.label"/>
+                </el-table>
+            </div>
         </div>
         <div class="mobile">
             <div class="mobile_item" v-for="item in tableData" v-bind:key="item">
@@ -55,11 +48,14 @@ export default{
                 required: true
             }
     },
-    // methods:{
-    //     dblclickHandler(){
-    //         alert("test");
-    //     }
-    // }
+    methods:{
+        dblclickHandler(row, column){
+            if (column.property == "event"){
+                var output = row.event;
+                this.$emit('dbclick',output);
+            }
+        }
+    }
 }
 </script>
 
@@ -84,6 +80,9 @@ hr{
     }
 }
 
+.elTable{
+    font-weight: bold;
+}
 .mobile_item{
     margin-bottom: 10px;
     border: 1px solid black;

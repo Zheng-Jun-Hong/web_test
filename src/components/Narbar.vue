@@ -7,8 +7,11 @@
             <router-link to="/">
                 <button type="button" class="btn btn-warning">首頁</button>
             </router-link>
-            <router-link to="/">
+            <router-link to="/test1">
                 <button type="button" class="btn btn-secondary">電站管理</button>
+            </router-link>
+            <router-link to="/test2">
+                <button type="button" class="btn btn-warning">圖表練習</button>
             </router-link>
             <div class="hide">
                 <button @click="changeHide()" type="button" class="btn btn-primary">收合導航欄</button>
@@ -68,6 +71,6 @@ a{
 .hide{
     position: relative;
     padding-left: 15px;
-    top: 590px;
+    top: 550px;
 }
 </style>
