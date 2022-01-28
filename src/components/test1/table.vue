@@ -3,7 +3,7 @@
         <div class="desktop">
             <div>
                 <el-table :data="tableData"
-                    :header-cell-style="{background:'yellow', textAlign:'center'}" 
+                    :header-cell-style="{background:'yellow', textAlign:'center', fontWeight:'bold'}" 
                     :cell-style="{textAlign:'center'}"
                     @cell-dblclick="dblclickHandler"
                 >
@@ -80,9 +80,7 @@ hr{
     }
 }
 
-.elTable{
-    font-weight: bold;
-}
+
 .mobile_item{
     margin-bottom: 10px;
     border: 1px solid black;
