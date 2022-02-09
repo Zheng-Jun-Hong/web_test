@@ -29,22 +29,10 @@ export default{
         }
     },
     props:{
-        graphOption:{
-            type:Array,
-            required:true
-        },
-        graphData:{
-            type:Array,
-            required:true
-        },
-        graphType:{
-            type:Array,
-            required:true
-        },
-        heatMapData:{
-            type:Array,
-            required:true
-        }
+        graphOption:{type:Array,required:true},
+        graphData:{type:Array,required:true},
+        graphType:{type:Array,required:true},
+        heatMapData:{type:Array,required:true}
     },
     methods:{
         plot(data){

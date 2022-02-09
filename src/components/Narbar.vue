@@ -13,6 +13,9 @@
             <router-link to="/test2">
                 <button type="button" class="btn btn-warning">圖表練習</button>
             </router-link>
+             <router-link to="/test3">
+                <button type="button" class="btn btn-danger">Inv1功率</button>
+            </router-link>
             <div class="hide">
                 <button @click="changeHide()" type="button" class="btn btn-primary">收合導航欄</button>
             </div>
@@ -71,6 +74,6 @@ a{
 .hide{
     position: relative;
     padding-left: 15px;
-    top: 550px;
+    top:500px;
 }
 </style>
